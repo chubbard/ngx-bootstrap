@@ -435,21 +435,6 @@ export abstract class DatePickerBase implements OnInit, OnDestroy {
     return yearsMatrix;
   }
 
-  public getWeeksNumbers(viewDate: moment.Moment): number[] {
-    // initialize weeks row
-    const calendarH = this.options.ui.dayRows;
-    const startDay = this.getStartingDay(viewDate);
-    const weeks = new Array(calendarH);
-
-    let currWeek = viewDate;
-    for (let i = 0; i < calendarH; i++) {
-      weeks[i] = this.options.ui.showISOWeekNumbers ? startDay.format('ww') : startDay.format('WW');
-      currWeek = viewDate.clone().add(1, 'week');
-    }
-
-    return weeks;
-  }
-
   public getLocale(): any {
     const localeData = moment.localeData();
     return {

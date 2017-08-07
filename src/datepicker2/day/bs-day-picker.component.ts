@@ -82,7 +82,7 @@ export class BsDayPickerComponent extends DatePickerBase {
     }
 
     this.calendar = this.getDaysCalendarMatrix(viewDate);
-    this.weeks = this.getWeeksNumbers(viewDate);
+    this.weeks = this.calendar.map(row => parseInt(moment(row[0].date).format('ww'), 10));
     this.locale = this.getLocale();
     this.viewMonth = moment(viewDate).format(this.options.format.monthTitle);
     this.viewYear = moment(viewDate).format(this.options.format.yearTitle);
