@@ -10,7 +10,7 @@ import { isBs3 } from '../utils';
           <ng-content></ng-content>
       </bar>
       <template [ngIf]="isStacked">
-        <bar *ngFor="let item of _value" [type]="item.type" [value]="item.value">{{item.label}}</bar>
+        <bar *ngFor="let item of _value" [type]="item.type" [value]="item.value" [max]="max">{{item.label}}</bar>
       </template>
     </div>
   `,
